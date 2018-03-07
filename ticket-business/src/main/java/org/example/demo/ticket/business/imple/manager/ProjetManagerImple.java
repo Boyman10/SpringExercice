@@ -3,11 +3,14 @@ package org.example.demo.ticket.business.imple.manager;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Named;
+
 import org.example.demo.ticket.business.contract.manager.ProjetManager;
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.exception.NotFoundException;
 
-public class ProjetManagerImple implements ProjetManager {
+@Named
+public class ProjetManagerImple extends AbstractManager implements ProjetManager {
 	  /**
      * Renvoie le projet demandé
      *
