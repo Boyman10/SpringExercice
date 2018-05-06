@@ -11,8 +11,9 @@ import org.example.demo.ticket.webapp.rest.resource.AbstractResource;
 /**
  * @deprecated
  * @author hackme
- *
+ * We now use the IoC container of Spring - see web xml to load the dependency using xml beans declaration and annotations
  */
+@Deprecated
 public class DependencyInjectionListener implements ServletContextListener {
 
 	@Override
