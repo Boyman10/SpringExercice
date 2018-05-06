@@ -1,5 +1,6 @@
 package org.example.demo.ticket.consumer.contract.dao;
 
+import org.example.demo.ticket.model.bean.ticket.Ticket;
 import org.example.demo.ticket.model.bean.utilisateur.Utilisateur;
 
 /**
@@ -9,5 +10,7 @@ import org.example.demo.ticket.model.bean.utilisateur.Utilisateur;
  */
 public interface ProjetDao {
 	public int getCountProjet(Utilisateur responsable);
+
+	public void updateTicket(Ticket pTicket);
 
 }

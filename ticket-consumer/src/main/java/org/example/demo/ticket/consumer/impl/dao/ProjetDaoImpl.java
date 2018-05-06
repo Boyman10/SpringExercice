@@ -3,6 +3,7 @@ package org.example.demo.ticket.consumer.impl.dao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.example.demo.ticket.consumer.contract.dao.ProjetDao;
+import org.example.demo.ticket.model.bean.ticket.Ticket;
 import org.example.demo.ticket.model.bean.utilisateur.Utilisateur;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -29,5 +30,11 @@ public class ProjetDaoImpl extends AbstractDaoImpl implements ProjetDao {
 
 	
 		return nParamTemplate.queryForObject(vSQL.toString(), vParams, Integer.class);
+	}
+
+	@Override
+	public void updateTicket(Ticket pTicket) {
+		
+		
 	}
 }
