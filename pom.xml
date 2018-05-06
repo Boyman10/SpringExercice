@@ -204,6 +204,14 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
+
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgres.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+
 			<dependency>
 				<groupId>javax.activation</groupId>
 				<artifactId>activation</artifactId>
@@ -211,7 +219,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
 			<dependency>
 				<groupId>javax.inject</groupId>
 				<artifactId>javax.inject</artifactId>
@@ -226,13 +233,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-			<dependency>
-				<groupId>org.postgresql</groupId>
-				<artifactId>postgresql</artifactId>
-				<version>${postgres.version}</version>
-				<scope>runtime</scope>
-			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 

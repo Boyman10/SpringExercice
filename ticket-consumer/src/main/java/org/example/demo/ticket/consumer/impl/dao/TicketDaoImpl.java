@@ -1,15 +1,18 @@
 package org.example.demo.ticket.consumer.impl.dao;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.Types;
 import java.util.List;
 
 import javax.inject.Named;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.logging.log4j.Logger;
 import org.example.demo.ticket.consumer.contract.dao.TicketDao;
 import org.example.demo.ticket.consumer.impl.rm.TicketStatutRM;
 import org.example.demo.ticket.model.bean.ticket.TicketStatut;
 import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
@@ -20,7 +23,7 @@ import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 @Named
 public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
 
-
+	private static final Log LOGGER = LogFactory.getLog(TicketDaoImpl.class);
 
 	@Override
 	public int getCountTicket(RechercheTicket rTicket) {
@@ -67,9 +70,34 @@ public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
 	    String vSQL = "UPDATE statut SET libelle = :libelle WHERE id = :id";
 
 	    SqlParameterSource vParams = new BeanPropertySqlParameterSource(pTicketStatut);
-
+        vParams.registerSqlType("id", Types.INTEGER);
+        vParams.registerSqlType("libelle", Types.VARCHAR);
+        
 	    NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
-	    int vNbrLigneMaJ = vJdbcTemplate.update(vSQL, vParams);
+	    int vNbrLigneMaJ;
+	    
+	    try {
+	    	vNbrLigneMaJ =  vJdbcTemplate.update(vSQL, vParams);
+	    } catch (DuplicateKeyException vEx) {
+	        LOGGER.error("Le TicketStatut existe déjà ! id=" + pTicketStatut.getId(), vEx);
+	        
+	    }
+	}
+	
+	public void insertTicketStatut(TicketStatut pTicketStatut) {
+	    String vSQL = "INSERT INTO statut (id, libelle) VALUES (:id, :libelle)";
+	    NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+
+	    BeanPropertySqlParameterSource vParams = new BeanPropertySqlParameterSource(pTicketStatut);
+	    vParams.registerSqlType("id", Types.INTEGER);
+	    vParams.registerSqlType("libelle", Types.VARCHAR);
+
+	    try {
+	        vJdbcTemplate.update(vSQL, vParams);
+	    } catch (DuplicateKeyException vEx) {
+	        LOGGER.error("Le TicketStatut existe déjà ! id=" + pTicketStatut.getId(), vEx);
+	        // ...
+	    }
 	}
 
 }
