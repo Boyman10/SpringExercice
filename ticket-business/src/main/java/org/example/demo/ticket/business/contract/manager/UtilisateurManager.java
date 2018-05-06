@@ -8,6 +8,6 @@ import org.example.demo.ticket.model.exception.NotFoundException;
 public interface UtilisateurManager {
 	List<Utilisateur> getListUtilisateur();
 
-	Utilisateur getUtilisateur(Integer pId) throws NotFoundException;
+	Utilisateur getUtilisateur(String pseudo, String pass) throws NotFoundException;
 
 }

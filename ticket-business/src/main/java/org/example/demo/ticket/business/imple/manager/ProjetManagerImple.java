@@ -48,4 +48,11 @@ public class ProjetManagerImple extends AbstractManager implements ProjetManager
         }
         return vList;
     }
+
+
+	@Override
+	public void insertProjet(Projet projet) {
+		// TODO Auto-generated method stub
+		
+	}
 }

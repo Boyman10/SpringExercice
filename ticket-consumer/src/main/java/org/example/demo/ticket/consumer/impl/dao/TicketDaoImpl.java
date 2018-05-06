@@ -9,6 +9,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.example.demo.ticket.consumer.contract.dao.TicketDao;
 import org.example.demo.ticket.consumer.impl.rm.TicketStatutRM;
+import org.example.demo.ticket.model.bean.ticket.Ticket;
 import org.example.demo.ticket.model.bean.ticket.TicketStatut;
 import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
 import org.springframework.dao.DuplicateKeyException;
@@ -97,6 +98,12 @@ public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
 	        LOGGER.error("Le TicketStatut existe déjà ! id=" + pTicketStatut.getId(), vEx);
 	        // ...
 	    }
+	}
+
+	@Override
+	public void updateTicket(Ticket pTicket) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

@@ -11,5 +11,6 @@ public interface ProjetManager {
 
 	Projet getProjet(Integer pId) throws NotFoundException;
 
+	void insertProjet(Projet projet);
 
 }

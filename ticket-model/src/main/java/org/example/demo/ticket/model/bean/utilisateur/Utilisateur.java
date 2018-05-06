@@ -6,8 +6,22 @@ public class Utilisateur {
     private String nom;
     private String prenom;
 
+    private String pseudo;
+    private String pass;
 
-    public Integer getId() {
+    public String getPseudo() {
+		return pseudo;
+	}
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
+	}
+	public String getPass() {
+		return pass;
+	}
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
+	public Integer getId() {
         return id;
     }
     public void setId(Integer pId) {
