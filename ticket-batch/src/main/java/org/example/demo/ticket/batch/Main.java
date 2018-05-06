@@ -6,7 +6,6 @@ import org.apache.commons.logging.LogFactory;
 import org.example.demo.ticket.business.contract.manager.ManagerFactory;
 import org.example.demo.ticket.model.exception.TechnicalException;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
