@@ -7,12 +7,15 @@ import java.util.List;
 import javax.inject.Named;
 
 import org.example.demo.ticket.consumer.contract.dao.TicketDao;
+import org.example.demo.ticket.consumer.impl.rm.TicketStatutRM;
 import org.example.demo.ticket.model.bean.ticket.TicketStatut;
 import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 @Named
 public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
@@ -55,6 +58,18 @@ public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
         List<TicketStatut> vListStatut = vJdbcTemplate.query(vSQL, vRowMapper);
 
         return vListStatut;
+	}
+	
+	@Override
+	public void updateTicketStatut(TicketStatut pTicketStatut) {
+		
+		// Must have matching parameters with bean property elements .
+	    String vSQL = "UPDATE statut SET libelle = :libelle WHERE id = :id";
+
+	    SqlParameterSource vParams = new BeanPropertySqlParameterSource(pTicketStatut);
+
+	    NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
+	    int vNbrLigneMaJ = vJdbcTemplate.update(vSQL, vParams);
 	}
 
 }

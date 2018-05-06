@@ -14,4 +14,5 @@ public interface TicketDao {
 
 	public int getCountTicket(RechercheTicket rTicket);
 	public List<TicketStatut> getListStatut();
+	public void updateTicketStatut(TicketStatut pTicketStatut);
 }
