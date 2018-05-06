@@ -4,6 +4,9 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- ===== Déclaration des Managers - No more needed in case of Annotations ===== -->
+
+     <bean id="daoFactory" class="org.example.demo.ticket.consumer.impl.dao.DaoFactoryImpl">
+     </bean>
     
     <bean id="abstractManager" abstract="true">
     	<property name="daoFactory" ref="daoFactory" />

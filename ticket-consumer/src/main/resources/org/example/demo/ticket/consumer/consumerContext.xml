@@ -4,14 +4,16 @@
        xsi:schemaLocation="
             http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-    <!-- ===== Déclaration des DAO ===== -->
-    <bean id="projetDao" class="org.example.demo.ticket.consumer.impl.dao.ProjetDaoImpl"/>
-    <bean id="ticketDao" class="org.example.demo.ticket.consumer.impl.dao.TicketDaoImpl"/>
-
-    <!-- ===== DaoFactory ===== -->
+            
+            
+        <!-- ===== DaoFactory ===== -->
     <bean id="daoFactory" class="org.example.demo.ticket.consumer.impl.dao.DaoFactoryImpl">
         <property name="projetDao" ref="projetDao"/>
         <property name="ticketDao" ref="ticketDao"/>
     </bean>
+    <!-- ===== Déclaration des DAO ===== -->
+    <bean id="projetDao" class="org.example.demo.ticket.consumer.impl.dao.ProjetDaoImpl"/>
+    <bean id="ticketDao" class="org.example.demo.ticket.consumer.impl.dao.TicketDaoImpl"/>
+
+
 </beans>
