@@ -15,6 +15,29 @@ import org.example.demo.ticket.model.recherche.ticket.RechercheTicket;
 
 @Named
 public class TicketManagerImple extends AbstractManager implements TicketManager {
+	
+    @Inject
+    @Named("txManagerTicket")
+    private PlatformTransactionManager platformTransactionManager;
+
+    @Override
+    public void changerStatut(Ticket pTicket, TicketStatut pNewStatut,
+                              Utilisateur pUtilisateur, Commentaire pCommentaire) {
+
+        TransactionStatus vTransactionStatus
+            = platformTransactionManager.getTransaction(new DefaultTransactionDefinition());
+        try {
+            pTicket.setStatut(pNewStatut);
+            getDaoFactory().getTicketDao().updateTicket(pTicket);
+            // TODO : Ajout de la ligne d'historique + commentaire ...
+        } catch (Throwable vEx) {
+            platformTransactionManager.rollback(vTransactionStatus);
+            throw vEx;
+        }
+        platformTransactionManager.commit(vTransactionStatus);
+    }
+	
+	
     /**
      * Cherche et renvoie le {@link Ticket} numéro {@code pNumero}
      *
