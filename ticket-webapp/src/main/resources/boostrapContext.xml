@@ -6,5 +6,5 @@
 
 	<import resource="classpath:/org/example/demo/ticket/webapp/webappContext.xml" />
 	<import resource="classpath:/org/example/demo/ticket/business/businessContext.xml" />
-	
+	<import resource="classpath:/org/example/demo/ticket/consumer/consumerContext.xml" />
 </beans>

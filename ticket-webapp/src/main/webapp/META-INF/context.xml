@@ -6,8 +6,8 @@
 
               url="jdbc:postgresql://localhost:5432/db_ticket"
               driverClassName="org.postgresql.Driver"
-              username="ticket"
-              password="ticket"
+              username="postgres"
+              password="test"
               defaultAutoCommit="false"
               defaultTransactionIsolation="READ_COMMITTED"
 
