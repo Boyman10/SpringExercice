@@ -7,7 +7,6 @@ import javax.inject.Named;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.logging.log4j.Logger;
 import org.example.demo.ticket.consumer.contract.dao.TicketDao;
 import org.example.demo.ticket.consumer.impl.rm.TicketStatutRM;
 import org.example.demo.ticket.model.bean.ticket.TicketStatut;
@@ -18,7 +17,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
-import org.springframework.jdbc.core.namedparam.SqlParameterSource;
+
 
 @Named
 public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
@@ -68,12 +67,12 @@ public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
 		
 		// Must have matching parameters with bean property elements .
 	    String vSQL = "UPDATE statut SET libelle = :libelle WHERE id = :id";
+	    NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 
-	    SqlParameterSource vParams = new BeanPropertySqlParameterSource(pTicketStatut);
+	    BeanPropertySqlParameterSource vParams = new BeanPropertySqlParameterSource(pTicketStatut);
         vParams.registerSqlType("id", Types.INTEGER);
         vParams.registerSqlType("libelle", Types.VARCHAR);
         
-	    NamedParameterJdbcTemplate vJdbcTemplate = new NamedParameterJdbcTemplate(getDataSource());
 	    int vNbrLigneMaJ;
 	    
 	    try {
