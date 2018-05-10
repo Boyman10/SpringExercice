@@ -7,7 +7,7 @@ import org.example.demo.ticket.model.bean.ticket.TicketStatut;
 import org.example.demo.ticket.model.exception.NotFoundException;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("ticketStatutManager")
 public class TicketStatutManagerImpl extends AbstractManager implements TicketStatutManager{
 
 	@Override

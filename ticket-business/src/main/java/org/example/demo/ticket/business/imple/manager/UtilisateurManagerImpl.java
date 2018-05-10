@@ -5,7 +5,9 @@ import java.util.List;
 import org.example.demo.ticket.business.contract.manager.UtilisateurManager;
 import org.example.demo.ticket.model.bean.utilisateur.Utilisateur;
 import org.example.demo.ticket.model.exception.NotFoundException;
+import org.springframework.stereotype.Component;
 
+@Component("utilisateurManager")
 public class UtilisateurManagerImpl extends AbstractManager implements UtilisateurManager {
 
 	@Override

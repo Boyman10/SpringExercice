@@ -9,7 +9,7 @@ import org.example.demo.ticket.business.contract.manager.ProjetManager;
 import org.example.demo.ticket.model.bean.projet.Projet;
 import org.example.demo.ticket.model.exception.NotFoundException;
 
-@Named
+@Named("projetManager")
 public class ProjetManagerImple extends AbstractManager implements ProjetManager {
 	  /**
      * Renvoie le projet demandé
