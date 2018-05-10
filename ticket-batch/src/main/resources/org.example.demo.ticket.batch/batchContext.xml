@@ -10,6 +10,7 @@
 		<property name="locations">
 			<list>
 				<value>file:${TICKET_HOME}/conf/db-ticket.properties</value>
+				<value>file:${TICKET_HOME}/conf/config.properties</value>
 			</list>
 		
 		</property>
