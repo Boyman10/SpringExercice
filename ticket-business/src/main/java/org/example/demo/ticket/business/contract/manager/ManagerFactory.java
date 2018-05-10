@@ -7,9 +7,12 @@ public interface ManagerFactory {
 	ProjetManager getProjetManager();
 	
 	UtilisateurManager getUtilisateurManager();
+	
+	TicketStatusManager getTicketStatutManager();
 
 	void setTicketManager(TicketManager ticketManager);
 
 	void setProjetManager(ProjetManager projetManager);
 	void setUtilisateurManager(UtilisateurManager utilisateurManager);
+	void setTicketStatutManager(TicketStatutManager ticketStatutManager);
 }

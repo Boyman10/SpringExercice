@@ -41,8 +41,17 @@ public class Main {
 
             String vTraitementId = pArgs[0];
             if ("ExportTicketStatus".equals(vTraitementId)) {
-                LOGGER.info("Execution du traitement : ExportTicketStatus");
-                // ...
+                
+            	LOGGER.info("Execution du traitement : ExportTicketStatus");
+                
+
+                
+                
+                
+                
+                
+                
+                
             } else {
                 throw new TechnicalException("Traitement inconnu : " + vTraitementId);
             }

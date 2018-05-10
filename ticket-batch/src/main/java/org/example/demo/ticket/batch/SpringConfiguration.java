@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ImportResource;
 @Configuration
 @ComponentScan("org.example.demo.ticket")
 @ImportResource("classpath:/applicationContext.xml")
+@Deprecated
 public class SpringConfiguration {
 
 }
