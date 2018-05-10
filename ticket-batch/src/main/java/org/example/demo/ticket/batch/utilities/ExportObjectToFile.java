@@ -10,7 +10,8 @@ import java.io.ObjectOutputStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.example.demo.ticket.batch.Main;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 /**
  * Class to deal with utilities such as export of Object to file
@@ -18,12 +19,13 @@ import org.springframework.beans.factory.annotation.Autowired;
  * @author bob
  * @version 1.0
  */
+@Service
 public class ExportObjectToFile {
 
 	/** Logger pour la classe */
 	private static final Log LOGGER = LogFactory.getLog(Main.class);
 
-	@Autowired
+	@Value("${chemin.fichier}")
 	private String path;
 
 	/**
