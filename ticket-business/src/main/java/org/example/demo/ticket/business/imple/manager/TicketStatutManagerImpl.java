@@ -3,10 +3,11 @@ package org.example.demo.ticket.business.imple.manager;
 import java.util.List;
 
 import org.example.demo.ticket.business.contract.manager.TicketStatutManager;
-
 import org.example.demo.ticket.model.bean.ticket.TicketStatut;
 import org.example.demo.ticket.model.exception.NotFoundException;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TicketStatutManagerImpl extends AbstractManager implements TicketStatutManager{
 
 	@Override
