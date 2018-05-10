@@ -3,6 +3,7 @@ package org.example.demo.ticket.batch;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.example.demo.ticket.batch.utilities.ExportObjectToFile;
 import org.example.demo.ticket.business.contract.manager.ManagerFactory;
 import org.example.demo.ticket.model.exception.TechnicalException;
 import org.springframework.context.ApplicationContext;
@@ -45,7 +46,8 @@ public class Main {
             	LOGGER.info("Execution du traitement : ExportTicketStatus");
                 
 
-                
+            	ExportObjectToFile expFile = new ExportObjectToFile();
+            	expFile.exportObject(vManagerFactory.getTicketStatutManager().);
                 
                 
                 

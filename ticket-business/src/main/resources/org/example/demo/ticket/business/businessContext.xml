@@ -14,12 +14,14 @@
     
     <bean id="projetManager" class="org.example.demo.ticket.business.imple.manager.ProjetManagerImple" parent="abstractManager"/>
     <bean id="ticketManager" class="org.example.demo.ticket.business.imple.manager.TicketManagerImple" parent="abstractManager"/>
+     <bean id="ticketStatutManager" class="org.example.demo.ticket.business.imple.manager.TicketStatutManagerImpl" parent="abstractManager"/>
   <bean id="utilisateurManager" class="org.example.demo.ticket.business.imple.manager.UtilisateurManagerImpl" parent="abstractManager"/>
     <!-- ===== ManagerFactory - replaced by annotations -->
     <bean id="managerFactory" class="org.example.demo.ticket.business.imple.manager.ManagerFactoryImple">
         <property name="projetManager" ref="projetManager"/>
         <property name="ticketManager" ref="ticketManager"/>
         <property name="utilisateurManager" ref="utilisateurManager"/>
+        <property name="ticketStatutManager" ref="ticketStatutManager"/>
     </bean>
     
     <bean id="txManagerTicket" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
