@@ -16,7 +16,6 @@
 
 	<!-- ===== Informations Maven ===== -->
 	<artifactId>ticket-batch</artifactId>
-
 	<!-- ===== Informations générales ===== -->
 	<name>${projectName} - Batches</name>
 
@@ -81,7 +80,6 @@
 					</archive>
 				</configuration>
 			</plugin>
-
 			<!-- Assemblage -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -102,6 +100,7 @@
 				</executions>
 
 			</plugin>
+
 
 		</plugins>
 	</build>
