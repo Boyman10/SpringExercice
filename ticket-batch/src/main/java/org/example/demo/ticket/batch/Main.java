@@ -47,9 +47,8 @@ public class Main {
                 
 
             	ExportObjectToFile expFile = new ExportObjectToFile();
-            	expFile.exportObject(vManagerFactory.getTicketStatutManager().);
-                
-                
+            	expFile.exportObject(vManagerFactory.getTicketStatutManager().getListStatuts());
+                 
                 
                 
                 
