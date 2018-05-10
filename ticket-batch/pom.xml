@@ -75,7 +75,6 @@
 						<manifest>
 							<mainClass>org.example.demo.ticket.batch.Main</mainClass>
 							<addClasspath>true</addClasspath>
-							<classpathPrefix></classpathPrefix>
 						</manifest>
 					</archive>
 				</configuration>

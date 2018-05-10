@@ -42,6 +42,11 @@
 		class="org.example.demo.ticket.consumer.impl.dao.TicketDaoImpl"
 		parent="abstractDao" />
 
+	<bean id="txManagerTicket"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSourceTicket" />
+	</bean>
+	
 <!-- NOT NEEDED 	<bean id="exportUtility"
 		class="org.example.demo.ticket.batch.utilities.ExportObjectToFile">
 		<property name="myPath" value="${chemin.fichier}" />

@@ -52,9 +52,5 @@
 -->
 
 
-	<bean id="txManagerTicket"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSourceTicket" />
-	</bean>
 	
 </beans>
