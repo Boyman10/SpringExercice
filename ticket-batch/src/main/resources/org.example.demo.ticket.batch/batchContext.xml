@@ -39,4 +39,8 @@
         parent="abstractDao" />
         
         
+    <bean id="exportUtility" class="org.example.demo.ticket.batch.utilities.ExportObjectToFile" >
+    <property name="myPath" value="${chemin.fichier}" />     
+</bean>    
+        
 </beans>
