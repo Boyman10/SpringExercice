@@ -19,10 +19,10 @@ public class ManagerFactoryImple implements ManagerFactory{
 	private TicketManager ticketManager;
 	
 	@Autowired
-	private UtilisateurManager userManager;
+	private UtilisateurManager utilisateurManager;
 	
 	@Autowired
-	private TicketStatutManager statutManager;
+	private TicketStatutManager ticketStatutManager;
 	
 	@Override
 	public void setProjetManager(ProjetManager projetManager) {
@@ -50,24 +50,24 @@ public class ManagerFactoryImple implements ManagerFactory{
 	@Override
 	public UtilisateurManager getUtilisateurManager() {
 
-		return userManager;
+		return utilisateurManager;
 	}
 
 	@Override
 	public void setUtilisateurManager(UtilisateurManager utilisateurManager) {
 
-		userManager = utilisateurManager;
+		this.utilisateurManager = utilisateurManager;
 	}
 
 	@Override
 	public TicketStatutManager getTicketStatutManager() {
-		return statutManager;
+		return ticketStatutManager;
 	}
 
 	@Override
 	public void setTicketStatutManager(TicketStatutManager ticketStatutManager) {
 		
-		statutManager = ticketStatutManager;
+		this.ticketStatutManager = ticketStatutManager;
 		
 	}	
 }

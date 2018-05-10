@@ -6,9 +6,16 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<!-- ===== Déclaration des Managers - No more needed in case of Annotations 
-		===== -->
+
 	<context:annotation-config />
+	<context:component-scan base-package="org.example.demo.ticket.business.imple.manager"></context:component-scan>
+	
+	
+
+	<!-- ===== Déclaration des Managers - No more needed in case of Annotations 
+		
+
+	
 	
 	<bean id="daoFactory"
 		class="org.example.demo.ticket.consumer.impl.dao.DaoFactoryImpl">
@@ -30,7 +37,10 @@
 	<bean id="utilisateurManager"
 		class="org.example.demo.ticket.business.imple.manager.UtilisateurManagerImpl"
 		parent="abstractManager" />
-	<!-- ===== ManagerFactory - replaced by annotations -->
+		
+		===== -->
+		
+	<!-- ===== ManagerFactory - replaced by annotations 
 	<bean id="managerFactory"
 		class="org.example.demo.ticket.business.imple.manager.ManagerFactoryImple">
 		<property name="projetManager" ref="projetManager" />
@@ -39,9 +49,12 @@
 		<property name="ticketStatutManager"
 			ref="ticketStatutManager" />
 	</bean>
+-->
+
 
 	<bean id="txManagerTicket"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSourceTicket" />
 	</bean>
+	
 </beans>

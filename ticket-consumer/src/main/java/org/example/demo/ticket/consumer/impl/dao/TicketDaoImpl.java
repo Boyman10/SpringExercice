@@ -20,7 +20,7 @@ import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
 
-@Named
+@Named("ticketDao")
 public class TicketDaoImpl extends AbstractDaoImpl implements TicketDao{
 
 	private static final Log LOGGER = LogFactory.getLog(TicketDaoImpl.class);

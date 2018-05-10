@@ -1,5 +1,7 @@
 package org.example.demo.ticket.consumer.impl.dao;
 
+import javax.inject.Named;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.example.demo.ticket.consumer.contract.dao.ProjetDao;
@@ -8,6 +10,7 @@ import org.example.demo.ticket.model.bean.utilisateur.Utilisateur;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 
+@Named("projetDao")
 public class ProjetDaoImpl extends AbstractDaoImpl implements ProjetDao {
 
 	private static final Log LOGGER = LogFactory.getLog(TicketDaoImpl.class);
