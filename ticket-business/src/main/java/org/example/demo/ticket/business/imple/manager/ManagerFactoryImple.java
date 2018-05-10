@@ -20,6 +20,7 @@ public class ManagerFactoryImple implements ManagerFactory{
 	
 	@Autowired
 	private UtilisateurManager userManager;
+	
 	@Autowired
 	private TicketStatutManager statutManager;
 	
@@ -60,7 +61,6 @@ public class ManagerFactoryImple implements ManagerFactory{
 
 	@Override
 	public TicketStatutManager getTicketStatutManager() {
-		// TODO Auto-generated method stub
 		return statutManager;
 	}
 
