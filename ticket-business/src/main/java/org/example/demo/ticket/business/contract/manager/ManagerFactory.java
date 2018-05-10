@@ -8,7 +8,7 @@ public interface ManagerFactory {
 	
 	UtilisateurManager getUtilisateurManager();
 	
-	TicketStatusManager getTicketStatutManager();
+	TicketStatutManager getTicketStatutManager();
 
 	void setTicketManager(TicketManager ticketManager);
 

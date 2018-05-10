@@ -6,6 +6,7 @@ import javax.inject.Named;
 import org.example.demo.ticket.business.contract.manager.ManagerFactory;
 import org.example.demo.ticket.business.contract.manager.ProjetManager;
 import org.example.demo.ticket.business.contract.manager.TicketManager;
+import org.example.demo.ticket.business.contract.manager.TicketStatutManager;
 import org.example.demo.ticket.business.contract.manager.UtilisateurManager;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,6 +20,8 @@ public class ManagerFactoryImple implements ManagerFactory{
 	
 	@Autowired
 	private UtilisateurManager userManager;
+	@Autowired
+	private TicketStatutManager statutManager;
 	
 	@Override
 	public void setProjetManager(ProjetManager projetManager) {
@@ -53,5 +56,18 @@ public class ManagerFactoryImple implements ManagerFactory{
 	public void setUtilisateurManager(UtilisateurManager utilisateurManager) {
 
 		userManager = utilisateurManager;
+	}
+
+	@Override
+	public TicketStatutManager getTicketStatutManager() {
+		// TODO Auto-generated method stub
+		return statutManager;
+	}
+
+	@Override
+	public void setTicketStatutManager(TicketStatutManager ticketStatutManager) {
+		
+		statutManager = ticketStatutManager;
+		
 	}	
 }
